@@ -1,20 +1,7 @@
-let userInput: unknown;
-let userName: string;
-let userAny: any;
+const button = document.querySelector("button")!;
 
-userInput = 5;
-userInput = "Max";
-
-//Unknown is more strict than any
-
-if (typeof userInput === "string") {
-  userName = userInput;
+function clickHandler(message: string) {
+  console.log("Message: " + message);
 }
 
-userName = userAny;
-
-function generateError(message: string, code: number): never {
-  throw { message, errorCode: code };
-}
-
-generateError("An error occured!", 500);
+button.addEventListener("click", clickHandler.bind(null, "You re welcome!"));

@@ -1,15 +1,7 @@
 "use strict";
-var userInput;
-var userName;
-var userAny;
-userInput = 5;
-userInput = "Max";
-//Unknown is more strict than any
-if (typeof userInput === "string") {
-    userName = userInput;
+var button = document.querySelector("button");
+function clickHandler(message) {
+    console.log("Message: " + message);
 }
-userName = userAny;
-function generateError(message, code) {
-    throw { message: message, errorCode: code };
-}
-generateError("An error occured!", 500);
+button.addEventListener("click", clickHandler.bind(null, "You re welcome!"));
+//# sourceMappingURL=app.js.map
